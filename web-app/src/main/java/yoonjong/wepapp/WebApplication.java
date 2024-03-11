@@ -1,4 +1,4 @@
-package yoonjong;
+package yoonjong.wepapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

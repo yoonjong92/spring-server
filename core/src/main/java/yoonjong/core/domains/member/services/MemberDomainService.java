@@ -18,7 +18,7 @@ public class MemberDomainService implements GetMemberUseCase, SaveMemberUseCase 
     }
 
     @Override
-    public long CreateMember(String email, String password, String name) {
-        return 0;
+    public Member CreateMember(String email, String password, String name) {
+        return null;
     }
 }

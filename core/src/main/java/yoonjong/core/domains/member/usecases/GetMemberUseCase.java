@@ -1,8 +1,8 @@
 package yoonjong.core.domains.member.usecases;
 
-import yoonjong.core.domains.member.models.Member;
+import yoonjong.core.domains.member.models.MemberModel;
 
 public interface GetMemberUseCase {
-    Member GetMember(long id);
-    Member GetMember(String email);
+    MemberModel GetMember(long id);
+    MemberModel GetMember(String email);
 }

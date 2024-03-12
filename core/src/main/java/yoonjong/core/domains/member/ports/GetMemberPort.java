@@ -1,9 +1,9 @@
 package yoonjong.core.domains.member.ports;
 
-import yoonjong.core.domains.member.models.Member;
+import yoonjong.core.domains.member.models.MemberModel;
 
 public interface GetMemberPort {
-    Member GetMember(long id);
+    MemberModel GetMember(long id);
 
-    Member GetMemberByEmail(String email);
+    MemberModel GetMemberByEmail(String email);
 }

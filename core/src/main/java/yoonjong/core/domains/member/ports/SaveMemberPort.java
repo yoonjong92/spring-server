@@ -1,7 +1,7 @@
 package yoonjong.core.domains.member.ports;
 
-import yoonjong.core.domains.member.models.Member;
+import yoonjong.core.domains.member.models.MemberModel;
 
 public interface SaveMemberPort {
-    long InsertMember(Member member);
+    long InsertMember(MemberModel member);
 }

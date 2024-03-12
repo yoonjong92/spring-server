@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 
 @Getter
 @Setter
-public class Member {
+public class MemberModel {
     private long id;
     private String email;
     private String password;

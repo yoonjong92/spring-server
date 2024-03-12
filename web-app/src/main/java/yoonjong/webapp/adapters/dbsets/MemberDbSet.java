@@ -1,4 +1,4 @@
-package yoonjong.wepapp.adapters.dbsets;
+package yoonjong.webapp.adapters.dbsets;
 
 import yoonjong.core.domains.member.models.Member;
 import yoonjong.core.domains.member.ports.GetMemberPort;

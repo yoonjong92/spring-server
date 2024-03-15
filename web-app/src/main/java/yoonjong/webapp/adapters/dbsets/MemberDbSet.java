@@ -9,6 +9,7 @@ import yoonjong.database.entities.MemberEntity;
 import yoonjong.database.repositories.MemberRepository;
 
 import java.time.OffsetDateTime;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -47,7 +48,12 @@ public class MemberDbSet implements GetMemberPort, SaveMemberPort {
 
     @Override
     public MemberModel GetMemberByEmail(String email) {
-        return null;
+        Optional<MemberEntity> byEmail = memberRepository.findByEmail(email);
+        if(byEmail.isEmpty())
+            return null;
+
+        MemberEntity memberEntity = byEmail.get();
+        return ToModel(memberEntity);
     }
 
     @Override

@@ -8,6 +8,8 @@ import yoonjong.core.domains.member.ports.SaveMemberPort;
 import yoonjong.core.domains.member.usecases.GetMemberUseCase;
 import yoonjong.core.domains.member.usecases.SaveMemberUseCase;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class MemberDomainService implements GetMemberUseCase, SaveMemberUseCase {
@@ -23,6 +25,11 @@ public class MemberDomainService implements GetMemberUseCase, SaveMemberUseCase 
     @Override
     public MemberModel GetMember(String email) {
         return null;
+    }
+
+    @Override
+    public List<MemberModel> GetAll() {
+        return getMemberPort.GetAll();
     }
 
     @Override

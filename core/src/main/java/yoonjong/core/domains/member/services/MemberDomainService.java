@@ -19,7 +19,7 @@ public class MemberDomainService implements GetMemberUseCase, SaveMemberUseCase 
 
     @Override
     public MemberModel GetMember(long id) {
-        return null;
+        return getMemberPort.GetMember(id);
     }
 
     @Override
@@ -40,6 +40,11 @@ public class MemberDomainService implements GetMemberUseCase, SaveMemberUseCase 
         if(!model.getPassword().equals(password))
             return null;
         return model;
+    }
+
+    @Override
+    public void DeleteMember(long id) {
+        saveMemberPort.DeleteMember(id);
     }
 
     @Override

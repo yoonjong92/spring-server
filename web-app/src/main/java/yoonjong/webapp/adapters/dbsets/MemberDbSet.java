@@ -44,7 +44,12 @@ public class MemberDbSet implements GetMemberPort, SaveMemberPort {
 
     @Override
     public MemberModel GetMember(long id) {
-        return null;
+        Optional<MemberEntity> byId = memberRepository.findById(id);
+        if(byId.isEmpty())
+            return null;
+
+        MemberEntity memberEntity = byId.get();
+        return ToModel(memberEntity);
     }
 
     @Override
@@ -72,5 +77,10 @@ public class MemberDbSet implements GetMemberPort, SaveMemberPort {
         entity.setUpdated_at(entity.getCreated_at());
         memberRepository.save(entity);
         return entity.getId();
+    }
+
+    @Override
+    public void DeleteMember(long id) {
+        memberRepository.deleteById(id);
     }
 }

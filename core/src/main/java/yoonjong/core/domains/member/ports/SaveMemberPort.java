@@ -4,4 +4,5 @@ import yoonjong.core.domains.member.models.MemberModel;
 
 public interface SaveMemberPort {
     long InsertMember(MemberModel member);
+    void DeleteMember(long id);
 }

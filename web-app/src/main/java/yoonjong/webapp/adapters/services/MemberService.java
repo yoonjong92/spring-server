@@ -7,6 +7,7 @@ import yoonjong.core.domains.member.usecases.GetMemberUseCase;
 import yoonjong.core.domains.member.usecases.SaveMemberUseCase;
 import yoonjong.webapp.dtos.Member.CreateMemberDto;
 import yoonjong.webapp.dtos.Member.LoginDto;
+import yoonjong.webapp.dtos.Member.MemberDto;
 import yoonjong.webapp.dtos.Member.MemberSimpleDto;
 
 import java.util.List;
@@ -24,6 +25,14 @@ public class MemberService {
                 .toList();
     }
 
+    public MemberDto GetDetail(long id) {
+        MemberModel model = getMemberUseCase.GetMember(id);
+        if(model == null)
+            return null;
+
+        return new MemberDto(model);
+    }
+
     public MemberSimpleDto CreateMember(CreateMemberDto createContext) {
         MemberModel member = saveMemberUseCase.CreateMember(createContext.getEmail(), createContext.getPassword(), createContext.getName());
         if(member == null)
@@ -32,7 +41,13 @@ public class MemberService {
         return new MemberSimpleDto(member);
     }
 
-    public MemberSimpleDto Login(LoginDto loginDto){ //entity객체는 service에서만
+    public int DeleteMember(long id) {
+        saveMemberUseCase.DeleteMember(id);
+        // 언래는 지워진 숫자를 리턴해야 함, 일단은 무조건 지웠다고 가정
+        return 1;
+    }
+
+    public MemberSimpleDto Login(LoginDto loginDto){
         MemberModel member = getMemberUseCase.Login(loginDto.getEmail(),loginDto.getPassword());
         if(member == null)
             return null;

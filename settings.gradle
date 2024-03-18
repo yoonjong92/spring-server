@@ -2,4 +2,5 @@ rootProject.name = 'spring-server'
 include 'core'
 include 'web-app'
 include 'database'
+include 'redis'
 

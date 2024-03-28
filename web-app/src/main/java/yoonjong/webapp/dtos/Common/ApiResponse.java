@@ -1,5 +1,8 @@
 package yoonjong.webapp.dtos.Common;
 
+import lombok.Getter;
+
+@Getter
 public class ApiResponse<T> {
 
     private static final String SUCCESS_STATUS = "success";
